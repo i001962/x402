@@ -1,0 +1,16 @@
+services:
+  facilitator:
+    build:
+      context: /opt/x402
+      dockerfile: deploy/facilitator/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - /opt/x402-deploy/facilitator/.env
+    expose:
+      - "4022"
+    networks:
+      - x402_internal
+
+networks:
+  x402_internal:
+    name: x402_internal

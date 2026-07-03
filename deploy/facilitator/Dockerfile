@@ -4,6 +4,7 @@ WORKDIR /app
 RUN corepack enable
 
 COPY examples/typescript/package.json examples/typescript/pnpm-lock.yaml examples/typescript/pnpm-workspace.yaml examples/typescript/turbo.json ./examples/typescript/
+COPY typescript/package.json typescript/pnpm-workspace.yaml typescript/turbo.json typescript/tsconfig.base.json ./typescript/
 COPY typescript/packages ./typescript/packages
 COPY examples/typescript/facilitator/base-docker ./examples/typescript/facilitator/base-docker
 

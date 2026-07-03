@@ -11,7 +11,7 @@ COPY examples/typescript/facilitator/base-docker ./examples/typescript/facilitat
 WORKDIR /app/examples/typescript
 RUN pnpm install --no-frozen-lockfile
 RUN pnpm --filter @x402/base-facilitator-docker... build
-RUN pnpm deploy --filter @x402/base-facilitator-docker --prod /out
+RUN pnpm deploy --filter @x402/base-facilitator-docker --prod --legacy /out
 
 FROM node:22-bookworm-slim AS runner
 WORKDIR /app
